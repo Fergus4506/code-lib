@@ -2,7 +2,7 @@
 int chBig(char* str,int n){
     int num=0,i=0;
     while(i<n){
-        if(*(str+i)>='A' && *(str)<='Z')
+        if(*(str+i)>='A' && *(str+i)<='Z')
             num+=1;
         i+=1;
     }
@@ -10,8 +10,9 @@ int chBig(char* str,int n){
 }
 
 int main(){
-    char str[100];
-    fgets(str,100,stdin);
+    /*char str[100];
+    fgets(str,100,stdin);*/
+    char str[]="AABB12345avads";
     int n=sizeof(str)/sizeof(str[0]);
     if(n==0)
         printf("%d",n);
@@ -20,4 +21,4 @@ int main(){
         printf("%d",ans);
     }
     return 0;
-}//11212
+}
