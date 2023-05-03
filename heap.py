@@ -2,6 +2,7 @@
 # lt=[2,7,5,6,8,9]
 # heapq.heapify(lt)
 # print(lt)
+#min heap 
 class MaxHeap:
 	def __init__(self):
 		self.heap = []
