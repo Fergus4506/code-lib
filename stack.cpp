@@ -6,8 +6,8 @@ class Stack
 private:
     int top;
     int *arr;
-    int len=DEFAULT_STACK_SIZE;
 public:
+    int len=DEFAULT_STACK_SIZE;
     Stack()
     {
         arr = new int[DEFAULT_STACK_SIZE];
@@ -23,6 +23,10 @@ public:
         top=s.top;
         arr=new int[DEFAULT_STACK_SIZE];
         for(int i=0;i<top+1;i++){
+            if(is_full()){
+                cout << "Stack overflow error!\n";
+                break;
+            }
             arr[i]=s.arr[i];
         }
     }
@@ -98,7 +102,7 @@ public:
             if(is_full()){
                 break;
             }
-            push(is.arr[is.top-i]);
+            push(is.arr[i]);
         }
         return *this;
     }
@@ -137,14 +141,14 @@ int main()
     s1<<1<<2<<3;            // << : push element
     cout<<s1<<s2<<s3;       //overloading <<
     s2<<8<<9;               //s1:123 s2:89
-    s3=s2+=s1<<4;           // +=: copy content to other stack //先做<< //s1:1234 //s2+=s1 //s2=891234 //s3=s2
+    s3=s2+=s1<<4;           // +=: copy content to other stack 複製的概念跟推入推出是不一樣的，複製是陣列的概念而推入是stack的概念
 //    s3=(s2+s1)<<4;
     cout<<s1<<s2<<s3;       
-    cout<<-s1<<-s2<<-s3;    // -: pop
+    cout<<-s1<<-s2<<-s3;    // -: pop 將pop出來的資料丟出並且輸出
     cout<<s1<<s2<<s3;       
     cout<<~s1<<~s2<<5;      // ~:peek
     !s1;                    // empty stack  
     s1<<0<<s2;              //overloading <<  // 我將 "<<" 設定為 s1原本的資料保留，然後將s2裡的資料由top丟進s1，
-    cout<<s1<<(s2<<-1)<<s3; 
+    cout<<s1<<(s2<<-1)<<s3; //在輸出前將s2中推入-1
     return 0;
 }
