@@ -98,7 +98,7 @@ public:
             if(is_full()){
                 break;
             }
-            push(is.arr[is.top-i]);
+            push(is.arr[i]);
         }
         return *this;
     }
