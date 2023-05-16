@@ -148,7 +148,7 @@ int main()
     cout<<s1<<s2<<s3;       
     cout<<~s1<<~s2<<5;      // ~:peek
     !s1;                    // empty stack  
-    s1<<0<<s2;              //overloading <<  // 我將 "<<" 設定為 s1原本的資料保留，然後將s2裡的資料由top丟進s1，
+    s1<<0<<s2;              //overloading <<  // 將 "<<" 設定為 s1原本的資料保留，然後將s2裡的資料由top丟進s1，推入的概念
     cout<<s1<<(s2<<-1)<<s3; //在輸出前將s2中推入-1
     return 0;
 }
